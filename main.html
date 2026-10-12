@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarosh Tanveer — Finance & Accounting Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --gold: #C8A96E;
+    --gold-light: #E8C98A;
+    --cream: #F8F4EE;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --light-gray: #F1EDE7;
+    --text: #1A2A3A;
+    --accent: #1B4F82;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: var(--navy);
+    padding: 0 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  /* PAGES */
+  .page { display: none; min-height: 100vh; padding-top: 70px; }
+  .page.active { display: block; }
+
+  /* ─── PAGE 1: HOME ─── */
+  .hero {
+    background: var(--navy);
+    min-height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(200,169,110,0.08) 0%, transparent 60%);
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px; height: 2px;
+    background: var(--gold);
+  }
+  .hero-eyebrow span {
+    color: var(--gold);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    line-height: 1.05;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-title {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+  .hero-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 50px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 32px;
+    border: none; border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .hero-right {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px 80px 80px 40px;
+    position: relative; z-index: 2;
+    gap: 20px;
+  }
+  .stat-cards {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; width: 100%;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: all 0.3s;
+  }
+  .stat-card:hover {
+    background: rgba(200,169,110,0.07);
+    border-color: rgba(200,169,110,0.5);
+    transform: translateY(-3px);
+  }
+  .stat-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-card .label {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+  .cert-badge {
+    width: 100%;
+    background: rgba(200,169,110,0.1);
+    border: 1px solid rgba(200,169,110,0.3);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .cert-icon {
+    width: 48px; height: 48px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .cert-text .cert-name {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  .cert-text .cert-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+  }
+
+  /* Decorative */
+  .hero-decor {
+    position: absolute;
+    right: -80px; top: 50%;
+    transform: translateY(-50%);
+    width: 500px; height: 500px;
+    border: 1px solid rgba(200,169,110,0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-decor2 {
+    position: absolute;
+    right: -20px; top: 50%;
+    transform: translateY(-50%);
+    width: 360px; height: 360px;
+    border: 1px solid rgba(200,169,110,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Expertise strip */
+  .expertise-strip {
+    background: var(--gold);
+    padding: 18px 80px;
+    display: flex; align-items: center; gap: 0;
+    overflow: hidden;
+  }
+  .strip-item {
+    display: flex; align-items: center; gap: 32px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .strip-item span {
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .strip-dot {
+    width: 5px; height: 5px;
+    background: var(--navy);
+    border-radius: 50%;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  /* CONTACT QUICK */
+  .quick-contact {
+    background: var(--light-gray);
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .qc-item {
+    background: var(--white);
+    padding: 32px 36px;
+    display: flex; align-items: center; gap: 18px;
+    transition: all 0.3s;
+  }
+  .qc-item:hover { background: var(--navy); }
+  .qc-item:hover .qc-label, .qc-item:hover .qc-val { color: var(--white); }
+  .qc-item:hover .qc-icon { background: var(--gold); }
+  .qc-icon {
+    width: 44px; height: 44px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .qc-label {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+    transition: color 0.3s;
+  }
+  .qc-val {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.3s;
+  }
+
+  /* ─── PAGE 2: EXPERIENCE & SKILLS ─── */
+  .page2-hero {
+    background: var(--navy);
+    padding: 80px 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page2-hero::after {
+    content: '';
+    position: absolute; right: 80px; top: 50%;
+    transform: translateY(-50%);
+    width: 300px; height: 300px;
+    border: 1px solid rgba(200,169,110,0.12);
+    border-radius: 50%;
+  }
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 30px; height: 2px;
+    background: var(--gold);
+  }
+  .section-eyebrow span {
+    color: var(--gold);
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .section-title span { color: var(--gold); }
+
+  .experience-section {
+    background: var(--cream);
+    padding: 80px 80px;
+  }
+  .exp-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: 50px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .exp-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold), rgba(200,169,110,0.1));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+    padding-left: 36px;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -36px; top: 8px;
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 3px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .exp-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px 36px;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+  }
+  .exp-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  }
+  .exp-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 8px; flex-wrap: wrap; gap: 12px;
+  }
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .exp-period {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .exp-company {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+  .exp-location {
+    color: var(--gray);
+    font-size: 0.82rem;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .exp-duties { list-style: none; }
+  .exp-duties li {
+    position: relative;
+    padding-left: 18px;
+    color: #374151;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+  .exp-duties li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--gold);
+    font-size: 0.75rem;
+    top: 3px;
+  }
+
+  /* Skills section */
+  .skills-section {
+    background: var(--navy);
+    padding: 80px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .skill-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,169,110,0.15);
+    border-radius: 10px;
+    padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .skill-card:hover { border-color: rgba(200,169,110,0.5); transform: translateY(-4px); }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-icon { font-size: 2rem; margin-bottom: 14px; }
+  .skill-name {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .skill-desc {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  /* ─── PAGE 3: ABOUT & EDUCATION ─── */
+  .about-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #162d4f 100%);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    min-height: 60vh;
+  }
+  .about-text-block {}
+  .about-intro {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin-top: 24px;
+  }
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .highlight-item {
+    padding: 18px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(200,169,110,0.15);
+  }
+  .hl-label {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .hl-val {
+    color: var(--white);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  /* Education */
+  .education-section {
+    background: var(--cream);
+    padding: 80px;
+  }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+  .edu-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--navy));
+  }
+  .edu-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+  .edu-year {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .edu-inst {
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* Languages */
+  .langs-section {
+    background: var(--navy);
+    padding: 60px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 40px;
+  }
+  .langs-left .section-eyebrow { margin-bottom: 12px; }
+  .langs-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+  }
+  .lang-pills { display: flex; gap: 16px; }
+  .lang-pill {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+  .lang-pill.primary {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .lang-pill.secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    background: var(--gold);
+    padding: 60px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .cta-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--navy);
+  }
+  .cta-banner p {
+    color: rgba(11,31,58,0.65);
+    margin-top: 6px;
+    font-size: 0.95rem;
+  }
+  .btn-dark {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 16px 36px;
+    border: none; border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  .btn-dark:hover { background: #0d2748; transform: translateY(-2px); }
+
+  /* Footer */
+  footer {
+    background: #060f1c;
+    padding: 30px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+  .footer-copy {
+    color: rgba(255,255,255,0.25);
+    font-size: 0.8rem;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .page.active .hero-left > * {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+  .page.active .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .page.active .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .page.active .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .page.active .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .page.active .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 20px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 32px; }
+    .hero h1 { font-size: 3rem; }
+    .quick-contact { grid-template-columns: 1fr; padding: 40px 24px; }
+    .experience-section, .skills-section, .education-section, .about-hero { padding: 50px 24px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .about-hero { grid-template-columns: 1fr; }
+    .langs-section { flex-direction: column; align-items: flex-start; padding: 40px 24px; }
+    .cta-banner { padding: 40px 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+    .expertise-strip { padding: 18px 24px; }
+    .page2-hero { padding: 60px 24px 50px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ST</div>
+  <div class="nav-links">
+    <a class="active" onclick="showPage('home', this)">Home</a>
+    <a onclick="showPage('experience', this)">Experience</a>
+    <a onclick="showPage('about', this)">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════ PAGE 1: HOME ═══════════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-decor"></div>
+    <div class="hero-decor2"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span>Finance Professional</span></div>
+      <h1>Sarosh<br><span>Tanveer</span></h1>
+      <p class="hero-title">ACCA · Chief Accountant · Auditor</p>
+      <p class="hero-desc">
+        A seasoned finance and accounting professional with over a decade of experience spanning 
+        international auditing, hospital accounting, and senior financial leadership in the hospitality sector.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showPage('experience', document.querySelector('.nav-links a:nth-child(2)'))">View Experience</button>
+        <button class="btn-outline" onclick="showPage('about', document.querySelector('.nav-links a:nth-child(3)'))">About Me</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="num">10+</div>
+          <div class="label">Years of Professional Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">3</div>
+          <div class="label">Major Organizations Served</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">ACCA</div>
+          <div class="label">Professional Qualification</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">🌍</div>
+          <div class="label">International Experience — Bahrain</div>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-icon">🏅</div>
+        <div class="cert-text">
+          <div class="cert-name">ACCA Qualified — SKANS, 2015</div>
+          <div class="cert-sub">Association of Chartered Certified Accountants</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="expertise-strip">
+    <div class="strip-item">
+      <span>Financial Reporting</span><div class="strip-dot"></div>
+      <span>Audit & Assurance</span><div class="strip-dot"></div>
+      <span>Oracle Financials</span><div class="strip-dot"></div>
+      <span>IFRS Compliance</span><div class="strip-dot"></div>
+      <span>Payroll Management</span><div class="strip-dot"></div>
+      <span>Taxation (FBR)</span><div class="strip-dot"></div>
+      <span>Bank Reconciliation</span>
+    </div>
+  </div>
+
+  <div class="quick-contact">
+    <div class="qc-item">
+      <div class="qc-icon" style="color:#C8A96E">📧</div>
+      <div>
+        <div class="qc-label">Email</div>
+        <div class="qc-val">saroshtanveer@yahoo.com</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-icon" style="color:#C8A96E">📱</div>
+      <div>
+        <div class="qc-label">Mobile (PK)</div>
+        <div class="qc-val">+92 322 4597707</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-icon" style="color:#C8A96E">📍</div>
+      <div>
+        <div class="qc-label">Location</div>
+        <div class="qc-val">Lahore Cantt, Pakistan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE 2: EXPERIENCE & SKILLS ═══════════════ -->
+<div class="page" id="page-experience">
+  <section class="page2-hero">
+    <div class="section-eyebrow"><span>Professional Journey</span></div>
+    <h2 class="section-title">Experience &<br><span>Core Skills</span></h2>
+  </section>
+
+  <section class="experience-section">
+    <h3 class="exp-section-title">Work History</h3>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Chief Accountant</div>
+            <div class="exp-period">Nov 2018 – Present</div>
+          </div>
+          <div class="exp-company">Ramee Group of Hotels</div>
+          <div class="exp-location">📍 Bahrain (International Posting)</div>
+          <ul class="exp-duties">
+            <li>Overseeing all financial operations for an international hospitality group across Bahrain</li>
+            <li>Leading financial reporting, consolidation, and compliance with international standards</li>
+            <li>Managing accounts payable and receivable functions on Oracle Financials platform</li>
+            <li>Preparation and reporting of income and expense forecasts to senior management</li>
+            <li>Implementation and oversight of payroll management across departments</li>
+            <li>Bank reconciliation and maintaining supplier statements with regular credit checks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Accounts Officer</div>
+            <div class="exp-period">Jan 2017 – Jun 2019</div>
+          </div>
+          <div class="exp-company">Surgimed Hospital Lahore</div>
+          <div class="exp-location">📍 Zafar Ali Road, Gulberg V, Lahore · 2 Years 4 Months</div>
+          <ul class="exp-duties">
+            <li>Managed petty cash, cash payment vouchers and maintained organized filing of all CPVs</li>
+            <li>Handled EOBI and PESSI monthly payment processes and reporting via official portals</li>
+            <li>Entered all revenue from corporate and private patients into Oracle-based financial software</li>
+            <li>Prepared and allocated insurance payment receipts to relevant doctors, consultants and labs</li>
+            <li>Generated monthly tax statements (services, supplies, payroll) and uploaded to FBR (IRIS)</li>
+            <li>Issued tax certificates to suppliers, doctors, and employees</li>
+            <li>Managed entire payroll preparation and bank reconciliation statements</li>
+            <li>Implemented Oracle accounting software as sole operator; monitored daily finance operations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-role">Junior Auditor</div>
+            <div class="exp-period">Sep 2014 – Dec 2016</div>
+          </div>
+          <div class="exp-company">Deloitte</div>
+          <div class="exp-location">📍 Lahore, Pakistan · Big 4 Audit Firm</div>
+          <ul class="exp-duties">
+            <li>Executed audit assignments per International Audit Approach (IAA) and International Auditing Standards</li>
+            <li>Performed initial job planning and risk area identification for client assignments</li>
+            <li>Assessed and tested design, implementation, and operational effectiveness of internal controls</li>
+            <li>Designed and performed tests of controls and substantive procedures in consultation with managers</li>
+            <li>Applied IFRS in preparation of financial statements and verified regulatory compliance</li>
+            <li>Reviewed team member work and coordinated with engagement managers for quality assurance</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="section-eyebrow"><span>Competencies</span></div>
+    <h2 class="section-title" style="font-size:2.2rem">Professional Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Financial Reporting</div>
+        <div class="skill-desc">Preparation of comprehensive financial statements, income and expense forecasts, and management reports per IFRS standards.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏛️</div>
+        <div class="skill-name">Audit & Assurance</div>
+        <div class="skill-desc">Big 4 experience at Deloitte applying International Auditing Standards, risk assessment, and control testing frameworks.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name">Oracle Financials</div>
+        <div class="skill-desc">Accounts Receivable and Payable modules, single-handed implementation and daily operation of enterprise accounting software.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏦</div>
+        <div class="skill-name">Bank Reconciliation</div>
+        <div class="skill-desc">Routine reconciliation of bank statements, monitoring daily accounting functions and supplier credit management.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name">Taxation (FBR / IRIS)</div>
+        <div class="skill-desc">Tax statements for services, supplies, and payroll; FBR portal submissions and tax certificate issuance.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔗</div>
+        <div class="skill-name">Consolidation Reporting</div>
+        <div class="skill-desc">Group-level financial consolidation and reporting for multi-entity hospitality group operations across international locations.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════ PAGE 3: ABOUT ═══════════════ -->
+<div class="page" id="page-about">
+  <section class="about-hero">
+    <div class="about-text-block">
+      <div class="section-eyebrow"><span>About Me</span></div>
+      <h2 class="section-title" style="font-size:2.8rem">The Professional<br>Behind the <span>Numbers</span></h2>
+      <p class="about-intro">
+        I am Sarosh Tanveer — an ACCA-qualified finance professional based in Lahore with a track record spanning 
+        over a decade across the audit, healthcare, and international hospitality sectors. 
+        My journey began at Deloitte where I developed a rigorous foundation in audit and compliance, 
+        and has since evolved into senior financial leadership on an international stage.
+      </p>
+      <p class="about-intro" style="margin-top:16px">
+        I bring strong command of Oracle Financials, deep knowledge of IFRS, and practical expertise in Pakistani 
+        taxation systems. My work ethic is defined by precision, accountability, and a drive to deliver reliable 
+        financial insight to support strategic decision-making.
+      </p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-item">
+        <div class="hl-label">Date of Birth</div>
+        <div class="hl-val">March 15, 1986</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-label">Nationality</div>
+        <div class="hl-val">Pakistani</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-label">Location</div>
+        <div class="hl-val">Lahore Cantt, Pakistan</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-label">Availability</div>
+        <div class="hl-val">Open to Opportunities</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-label">Mobile (PK)</div>
+        <div class="hl-val">+92 322 4597707</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-label">Mobile (BH)</div>
+        <div class="hl-val">+973 3465 9371</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="education-section">
+    <div class="section-eyebrow" style="margin-bottom:12px"><span>Qualifications</span></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--navy)">Academic &amp; <span style="color:var(--gold)">Professional</span> Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">2015</div>
+        <div class="edu-degree">ACCA (Finalist)</div>
+        <div class="edu-inst">SKANS School of Accountancy, Lahore</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2006</div>
+        <div class="edu-degree">Bachelor of Commerce (B.Com)</div>
+        <div class="edu-inst">University of the Punjab, Lahore</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2004</div>
+        <div class="edu-degree">Intermediate in Commerce (ICS)</div>
+        <div class="edu-inst">Peak Solution College, Lahore</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">2002</div>
+        <div class="edu-degree">Matriculation</div>
+        <div class="edu-inst">F.G. Boys High School No. 01, Lahore Cantt</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="langs-section">
+    <div class="langs-left">
+      <div class="section-eyebrow"><span>Languages</span></div>
+      <h3>Fluent in Two<br>Languages</h3>
+    </div>
+    <div class="lang-pills">
+      <div class="lang-pill primary">🇬🇧 English</div>
+      <div class="lang-pill secondary">🇵🇰 Urdu</div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div>
+      <h3>Available for New Opportunities</h3>
+      <p>Looking for a senior finance role where my international experience can make a real impact.</p>
+    </div>
+    <button class="btn-dark" onclick="window.location.href='mailto:saroshtanveer@yahoo.com'">Get In Touch →</button>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Sarosh Tanveer</div>
+    <div class="footer-copy">© 2025 · Finance &amp; Accounting Professional</div>
+  </footer>
+</div>
+
+<script>
+  function showPage(pageId, clickedLink) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + pageId).classList.add('active');
+    if (clickedLink) clickedLink.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
